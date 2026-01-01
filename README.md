@@ -266,178 +266,170 @@ FOLDERNAME --> PROJECTNAME --> AppNAME -->admin.py
 
 ### Aggregate Functions
 
----->from diange.dk.models import Max, Min, Sum, Avg, Count
+### ---->from diange.dk.models import Max, Min, Sum, Avg, Count
 
-44.	 MODELNAME.objects.all().aggregate (Max("col"))
+44.		MODELNAME.objects.all().aggregate (Max("col"))
 
 45. 	MODELNAME.objects.all().aggregate (Min("col"))
  
-46. MODELNAME.objects.all().aggregate(Sum("col"))
+46. 	MODELNAME.objects.all().aggregate(Sum("col"))
 
-47.	MODELNAME.objects.all().aggregate(Avg("col"))
+47.		MODELNAME.objects.all().aggregate(Avg("col"))
 
-48. MODELNAME.objects.all().aggregate(Count("col"))
+48. 	MODELNAME.objects.all().aggregate(Count("col"))
 
 
 ### Django Forms
 
-49. Create a Django Model
+### 49. Create a Django Model
 
 PROJECTAPP---->APPNAME--->models.py
 
-from django.db import models 
-class MODELNAME(models.Model):
-field1 models. FieldName()
-field2 models. FieldName()
-.
-.
-fieldN models. FieldName()
+		from django.db import models 
+		class MODELNAME(models.Model):
+		field1 models. FieldName()
+		field2 models. FieldName()
+		.
+		.
+		fieldN models. FieldName()
 
 
-50. Create a forms.py
+### 50. Create a forms.py
 
 PROJECTNAME----> APPNAME ------>forms.py
 
-51. Create a ModelForm
+### 51. Create a ModelForm
 
 PROJECTNAME----->APPNAME-------> forms.py
 
-From. models import MODELNAME
-from django import forms
-class MODELNAMEModelFrom(forms.ModelForm):
-class Meta:
-model= "MODELNAME"
-fields= ["field1", "field2",...) #OR "__all__"
+		From. models import MODELNAME
+		from django import forms
+		class MODELNAMEModelFrom(forms.ModelForm):
+		class Meta:
+		model= "MODELNAME"
+		fields= ["field1", "field2",...) #OR "__all__"
 
-52. Send the Model Form instance to the corresponding templates
+### 52. Send the Model Form instance to the corresponding templates
 
 PROJECTNAME-----> APPNAME------> VIEWS .py
 
-def view1(request):
+		def view1(request):
+		if request.method == "GET":
+		template_name = "to/path/template.html"
+		form= MODELNAMEModelFrom()
+		context = {}
+		return render(request, template_name, context)
+		elif request.method == "POST":
+		form =MORELNAMEModelFrom(request.POST)
+		if form.is_valid():
+		form.save()
 
-if request.method == "GET":
-template_name = "to/path/template.html"
-form= MODELNAMEModelFrom()
-context = {}
-return render(request, template_name, context)
-
-elif request.method == "POST":
-form =MORELNAMEModelFrom(request.POST)
-if form.is_valid():
-form.save()
-
-53.Create a template to render the ModelForm 
+### 53.Create a template to render the ModelForm 
 
 PROJECTNAME-----> templates -----> APPNAME------> templ.html
 
-<form method="POST">
-
-{% csrf token %}
-
-{{form}}
-
-<input type="submit">
-
-</form>
+		<form method="POST">
+		{% csrf token %}
+		{{form}}
+		<input type="submit">
+		</form>
 
 
 ### Empty Form:
 
-### Form ModelForm()
+		Form ModelForm()
 ### Form filled with data from FrontEnd
-### form= ModelForm(request.POST)
+		form= ModelForm(request.POST)
 ### Form filled with data from BackEnd
-### obj = MODEL.objects.get(CONDITION)
-### form= ModelForm(instance=obj)
+		obj = MODEL.objects.get(CONDITION)
+		form= ModelForm(instance=obj)
 ### Form filled with data from FrontEnd (UI) to update it in the BackEnd(08)
-### obj MODEL.objects.get(CONDITION)
-### form = ModelForm(request.POST, instance=obj)
+		obj MODEL.objects.get(CONDITION)
+		form = ModelForm(request.POST, instance=obj)
 
 ### URL Names
 
 PROJECTNAME -----> APPNAME----->urls.py
 
-from django.urls import path 
-from . import views
-urlpatterns = [
-path("add/", views.add_course_view, name="addurl")
-          ]
+		from django.urls import path 
+		from . import views
+		urlpatterns = [
+		path("add/", views.add_course_view, name="addurl")
+		          ]
+		  
 PROJECTNAME ---> templates ---> APPNAME ---> templ.html
-
-<a href={%  url "addurl" %} >
-
-<tag>Actual Content</tag>
-
-</a>
+		
+		<a href={%  url "addurl" %} >
+		<tag>Actual Content</tag>
+		</a>
 
 ### Dynamic URLs in Django
 
-1. Create a Dynamic URL using DTL {{ VAR }}
+### 1. Create a Dynamic URL using DTL {{ VAR }}
 
 PROJECTNAME-----> templates ----> APPNAME -----> templ.html
 
-<a href="/project/app/{{VAR}}/">
+		<a href="/project/app/{{VAR}}/">
+		<tag> content </tag>
+		</a>
 
-<tag> content </tag>
-
-</a>
-
-2. Create a Dynamic URL Path
+### 2. Create a Dynamic URL Path
 
 PROJECTNAME ----->APPNAME-------> urls.py
 
-urlpatterns = [
-path("app/<j>/", views. VIEWNAME),
-]
-3. Create a Dynamic view
+		urlpatterns = [
+		path("app/<j>/", views. VIEWNAME),
+		]
+		
+### 3. Create a Dynamic view
 
 PROJECTNAME-----> APPNAME--------> views.py
 
-def VIEWNAME(request,j):
-------------------------------------
------------------------------------
------------------------------------
+		def VIEWNAME(request,j):
+		------------------------------------
+		-----------------------------------
+		-----------------------------------
 
 
 
 ### Django Crispy Forms
 
-1. Install Django Crispy Forms
+### 1. Install Django Crispy Forms
 
-pip install crispy-bootstrap5
+		pip install crispy-bootstrap5
 
-2. Register Django Crispy Forms
+### 2. Register Django Crispy Forms
 
 PROJECTNAME-----> PROJECTNAME ---> settings.py
 
-INSTALLED_APPS = [
-"APP1",
-"APP2",
-.
-.
-"crispy_forms",
-"crispy_bootstrap5",
-]
+		INSTALLED_APPS = [
+		"APP1",
+		"APP2",
+		.
+		.
+		"crispy_forms",
+		"crispy_bootstrap5",
+		]
 
 
-3. Configure Django Crispy Forms
+### 3. Configure Django Crispy Forms
 
 PROJECTNAME -----> PROJECTNAME -----> settings.py
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+		CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+		
+		CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-4. Load Django Crispy Form Tags
+### 4. Load Django Crispy Form Tags
 
 PROJECTNAME------> templates ---> APPNAME ------> templ.html
 
-{% load crispy_forms_tags %}
+		{% load crispy_forms_tags %}
 
-5. Apply Django Crispy Form Filter
+### 5. Apply Django Crispy Form Filter
 
 PROJECTNAME------> templates ------> APPNAME------> templ.html
 
-{{ form|crispy }}
+		{{ form|crispy }}
 
 
