@@ -294,22 +294,22 @@ list_display = [10,20,30,40,50]
 ### Update
 
  31. 	obj MODELNAME.objects.get(col = val) 
-obj.member = NEWVAL 
-obj.save()
+      obj.member = NEWVAL 
+      obj.save()
 
 ### Delete
 
 32. 	obj = MODELNAME.objects.get(col = val) 
-obj.delete()
+     obj.delete()
 
 ### Insert
 
 33. 	obj MODELNAME(col1=vall, col2=val2,...) 
-obj.save()
+     obj.save()
 
 ### Retrieval
 
-34. 	objs_qs = MODELNAME.objects.filter(col = val)
+34. 	objs_qs = MODELNAME.objects.filter(col =  val)
 
 35. 	objs_qs = MODELNAME.objects.filter(col_lt = val)
 
@@ -323,7 +323,7 @@ obj.save()
 
 40.	 objs_qs = MODELNAME.objects.filter(col_endswith = "L")
 
-41 	objs_qs = MODELNAME.objects.filter(col_contains = "L")
+41. 	objs_qs = MODELNAME.objects.filter(col_contains = "L")
 
 42. 	objs_qs = MODELNAME.objects.order_by("col")
 
@@ -337,11 +337,11 @@ obj.save()
 
 45. 	MODELNAME.objects.all().aggregate (Min("col"))
  
-46. 	MODELNAME.objects.all().aggregate(Sum("col"))
+46. MODELNAME.objects.all().aggregate(Sum("col"))
 
-47.	 MODELNAME.objects.all().aggregate(Avg("col"))
+47.	MODELNAME.objects.all().aggregate(Avg("col"))
 
-48.	 MODELNAME.objects.all().aggregate(Count("col"))
+48. MODELNAME.objects.all().aggregate(Count("col"))
 
 
 ### Django Forms
@@ -359,7 +359,7 @@ field2 models. FieldName()
 fieldN models. FieldName()
 
 
-50.Create a forms.py
+50. Create a forms.py
 
 PROJECTNAME----> APPNAME ------>forms.py
 
