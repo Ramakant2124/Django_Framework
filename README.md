@@ -123,47 +123,36 @@ FOLDERNAME ---> PROJECTNAME ---> templates ---> APPNAME ---> templ.html
 
 ### 18. Create a AppLevel URL (Assuming that, we've the AppLevel urls.py file ready & registered) 
 
-from django.urls import path
-from. import views
+			from django.urls import path
+			from. import views
 
 
 # Django Template Language (DTL)
 
 FOLDERNAME/PROJECTNAME/templates/APPNAME/templ.html
 
-----> Variable
+### ----> Variable
 
-{{ context_key }}
+		{{ context_key }}
 
------> Conditional Statements
+### -----> Conditional Statements
 
-{% if LHS CMP_OP RHS %}
+		{% if LHS CMP_OP RHS %}
+		<tag> content1 </tag>
+		<tag> content2 </tag>
+		{% elif LHS CMP_OP RHS %}
+		<tag> content1 </tag>
+		<tag> content2 </tag>
+		{% else %}
+		<tag> content1 </tag>
+		<tag> content2 </tag>
+		{% endif %}
 
-<tag> content1 </tag>
+### -----> Control Flow Statements
 
-<tag> content2 </tag>
-
-{% elif LHS CMP_OP RHS %}
-
-<tag> content1 </tag>
-
-<tag> content2 </tag>
-
-{% else %}
-
-<tag> content1 </tag>
-
-<tag> content2 </tag>
-
-{% endif %}
-
------> Control Flow Statements
-
-{% for VAR in CONTEXT_KEY %}
-
-<tag> {{VAR}} </tag>
-
-{% endfor %}
+		{% for VAR in CONTEXT_KEY %}
+		<tag> {{VAR}} </tag>
+		{% endfor %}
 
 
 # Extrernal Static Files in Django
@@ -176,25 +165,19 @@ FOLDERNAME -> PROJECTNAME --> static -> APPNAME
 
 FOLDERNAME --> PROJECTNAME --> settings.py
 
-STATICFILES_DIRES = [ "static"]
+		STATICFILES_DIRES = [ "static"]
 
 ### 21. Load static Files in Django Templates
 
 FOLDERNAME --> PROJECTNAME --> templates --> AppNAME --> templ1.html
 
-{% load static %}
-
-<head>
-
-<link rel="stylesheet" href="{% static 'resource.css' %}">
-
-</head>
-
-<body>
-
-<img rel="stylesheet" src="{% static 'images/FILENAME.jpg' %}">
-
-</body>
+		{% load static %}
+		<head>
+		<link rel="stylesheet" href="{% static 'resource.css' %}">
+		</head>
+		<body>
+		<img rel="stylesheet" src="{% static 'images/FILENAME.jpg' %}">
+		</body>
 
 ### 22. python manage.py makemigrations ---> ConvertsPython Code into SQL (Generates SQL code)
 
