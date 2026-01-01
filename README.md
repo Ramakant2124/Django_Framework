@@ -51,15 +51,15 @@ ECOM_PROJECT = AUTH_APP + SELER_APP + BUYER_APP + LOGISTICS_APP + INVERTORY_APP 
 
 ### 9. Create a View
 
- FOLDERNAME --> PROJECTNAME---> APPNAME-->                     views.py
+ FOLDERNAME --> PROJECTNAME---> APPNAME-->views.py
+ 
+       from django.http import HttpResponse
+       def VIEWNAME(request):
+       ----------------------------------
+       ----------------------------------
+       resp obj =  HttpResponse("to be returned on browser")
+       return resp obj
 
-from django.http import HttpResponse
-def VIEWNAME(request):
-----------------------------------
-----------------------------------
-
-resp obj =  HttpResponse("to be returned on browser")
-return resp obj
 
 
 ### 10. Create a App Level urls.py
