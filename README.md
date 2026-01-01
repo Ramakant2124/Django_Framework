@@ -7,6 +7,25 @@ This are the projects performed by me during the learning of django framework an
 Thank You!!
 
 # ********** DJANGO PROJECT STEPS ************
+
+### FOR WINDOWS OS
+Commands to manually handle the veny (if not using PyCharm)
+### 1)	Install virtualenv (OTP)
+
+        	  pip install virtualenv
+
+### 2)	 Create a Virtual Env
+   
+ 		 virtualenv VENV_NAME
+  	 
+### 3)	Activate a Virtual Env
+   
+		VENV_NAME\Scripts\activate
+
+### 4)	De-activate a Virtual Env
+   
+		Deactivate
+
 ### 1. Open PyCharm ---> New Project ---> Choose Location
 
 ### 2. Install Django 
