@@ -179,11 +179,14 @@ FOLDERNAME --> PROJECTNAME --> templates --> AppNAME --> templ1.html
 		<img rel="stylesheet" src="{% static 'images/FILENAME.jpg' %}">
 		</body>
 
-### 22. python manage.py makemigrations ---> ConvertsPython Code into SQL (Generates SQL code)
+### 22. ---> ConvertsPython Code into SQL (Generates SQL code)
+		python manage.py makemigrations 
 
-### 23. python manage.py migrate    ---> Executes the generated SQL code
+### 23.  ---> Executes the generated SQL code
+		python manage.py migrate   
 
-### 24. python manage.py createsuperuser
+### 24. ---> superuser create
+		python manage.py createsuperuser
 
 ### Create your models here.
 
@@ -197,24 +200,23 @@ FOLDERNAME --> PROJECTNAME --> templates --> AppNAME --> templ1.html
 
 FOLDERNAME --> PROJECTNAME --> AppNAME --> models.py
 
-from django.db import models
-
-class MODELNAME (models. Model):
-field1 = models. FIELDCLASS()
-field2 = models. FIELDCLASS()
-field3= models. FIELDCLASS()
+		from django.db import models
+		class MODELNAME (models. Model):
+		field1 = models. FIELDCLASS()
+		field2 = models. FIELDCLASS()
+		field3= models. FIELDCLASS()
 
 ### 26. Register a Django Model
 
 FOLDERNAME --> PROJECTNAME --> AppNAME -->admin.py
 
-from django.db import admin
-class MODELNAMEAdmin (admin. ModelAdmin):
-list_display = [10,20,30,40,50]
+		from django.db import admin
+		class MODELNAMEAdmin (admin. ModelAdmin):
+		list_display = [10,20,30,40,50]
 
 ### 27. Visit
 
----> http://127.0.0.1:8000/admin/
+		---> http://127.0.0.1:8000/admin/
 
 #DJANGO ORM QUERIES
 
