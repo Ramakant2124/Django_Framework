@@ -7,9 +7,9 @@ This are the projects performed by me during the learning of django framework an
 Thank You!!
 
 # ********** DJANGO PROJECT STEPS ************
-1. Open PyCharm ---> New Project ---> Choose Location
+### 1. Open PyCharm ---> New Project ---> Choose Location
 
-2. Install Django 
+### 2. Install Django 
 
                 "pip install django"
 
@@ -51,7 +51,7 @@ ECOM_PROJECT = AUTH_APP + SELER_APP + BUYER_APP + LOGISTICS_APP + INVERTORY_APP 
 
 9. Create a View
 
-FOLDERNAME --> PROJECTNAME---> APPNAME--> views.py
+ FOLDERNAME --> PROJECTNAME---> APPNAME-->                     views.py
 
 from django.http import HttpResponse
 def VIEWNAME(request):
@@ -69,7 +69,7 @@ FOLDERNME---> PROJECTNAME ---> APPNAME ---->urls.py
 
 11. Register App Level urls.py to Project Level urls.py
 
-FOLDERNME --- > PROJECTNAME --->PROJECTNAME ---> urls.py
+FOLDERNME ---> PROJECTNAME --->PROJECTNAME ---> urls.py
 
 from django.urls import path, include
 urlpatterns = [
