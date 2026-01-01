@@ -88,56 +88,7 @@ FOLDERNME---> PROJECTNAME ---> APPNAME ---->urls.py
 			path("/url", VIEWNAME)
 			]
 
-ProjectFOLDER
-		|
-		|            
-    |----------Venv       
- 		|               
-    |----------diangoPROJECT  (BASE_DIR/OUTER PROJECT DIR)
-		|           |
-    |           |---------djangoPROJECT (INNER PROJECT DIR)
-		|		                      |
-    |		                      |-------init.py
-		|		                      |
-    |		                      |--------asgi.py
-		|		                      |
-    |		                      |--------settings.py
-		|	                      	|
-    |                      		|--------urls.py (Project Level URLConfig)
-		|                         |
-    |		                      |--------wsgi.py
-		|
-    |------------djangoAPP1
-		|		          |
-    |		          |----migrations
-    |			        |       |-------  __init__. py
-		|		          |
-    |	          	|----  __init__.py
-		|	          	|
-    |	          	|-------admin.py
-		|          		|
-    |	          	|--------apps.py
-		|	          	|
-    |	          	|-------models.py
-		|	          	|
-    |          		|------tests.py
-		|	          	|
-    |          		|------urls.py (App Level URLConfig)
-		|          		|-------views.py
-		|
-    |------------templates
-		|	            	|--------diangoAPP1
-		|			                    	|-------templ1.html
-		|                           |-------templ2.html
-		|
- 		|-------------static
-		|		            |-------djangoAPP1
-		|			                    |-----style1.css
-		|			                    |------script1.js
-		|
-    |-------------manage.py
-		|
-    |--------------db.sqlite3
+<img width="524" height="680" alt="image" src="https://github.com/user-attachments/assets/535f3d4a-8465-4c36-bd0f-d67bef74a670" />
 
 
 ### 13.Create a directory "templates"
@@ -151,9 +102,9 @@ FOLDERNAME ---> PROJECTNAME ---> templates ---> APPNAME
 ### 15. Register/Configure the "templates" directory 
 FOLDERNAME ---> PROJECTNAME ---> settings.py
 
-TEMPLATES = [ { k1:v1, k2:v2, "DIRS": ["templates"] } ]
-While deployment-
-TEMPLATES = [ { k1:v1, k2:v2, "DIRS": [ os.path.join(BASE_DIR, "templates")]}]
+		TEMPLATES = [ { k1:v1, k2:v2, "DIRS": ["templates"] } ]
+		While deployment-
+		TEMPLATES = [ { k1:v1, k2:v2, "DIRS": [ os.path.join(BASE_DIR, "templates")]}]
 
 ### 16. Create a template (HTML File)
 
@@ -161,15 +112,14 @@ FOLDERNAME ---> PROJECTNAME ---> templates ---> APPNAME ---> templ.html
 
 ### 17. Create a view to Render the template
 
- from django.shortcuts import render
+ 		from django.shortcuts import render
 
   FOLDERNAME ---> PROJECTNAME --> APPNAME ---> views.py
 
-def VIEWNAME(request):
-
-template_name = "APPNAME/template.html"
-context = {} 
-return render(request, template_name, context)
+		def VIEWNAME(request):
+		template_name = "APPNAME/template.html"
+		context = {} 
+		return render(request, template_name, context)
 
 ### 18. Create a AppLevel URL (Assuming that, we've the AppLevel urls.py file ready & registered) 
 
