@@ -433,3 +433,10 @@ PROJECTNAME------> templates ------> APPNAME------> templ.html
 		{{ form|crispy }}
 
 
+<img width="940" height="534" alt="image" src="https://github.com/user-attachments/assets/6488d494-08bc-4760-8ff9-663eff6aec56" />
+
+<img width="949" height="423" alt="image" src="https://github.com/user-attachments/assets/ee8db9d4-587f-40a5-ab44-bc4fe493515f" />
+
+<img width="940" height="421" alt="image" src="https://github.com/user-attachments/assets/1cc3ec81-763f-47ee-9962-0b38276b1e09" />
+
+<img width="940" height="479" alt="image" src="https://github.com/user-attachments/assets/e8bdde3c-56c4-4d2f-aa05-a71b9cfc6341" />
