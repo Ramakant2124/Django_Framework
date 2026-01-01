@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+      <title>Login Page</title>
+    {% endblock title %}
+
+
+  {% block content %}
+<div class="container">
+  <h1 style="text-align: center;">Login Page</h1>
+
+    <form method="post" style="width:50%; margin:auto;">
+        {% csrf_token %}
+       <label  for="username"  >UserName</label><br>
+        <input type="text" name="username" id="username" placeholder="username" class="form-control"><br><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" placeholder="password" class="form-control "><br><br>
+      <button type="submit" class="btn btn-primary btn-lg">
+    Submit
+</button>
+
+    </form>
+</div>
+  {% endblock content %}
