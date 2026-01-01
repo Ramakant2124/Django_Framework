@@ -69,19 +69,19 @@ FOLDERNME---> PROJECTNAME ---> APPNAME ---->urls.py
 
 ### 11. Register App Level urls.py to Project Level urls.py
 
-FOLDERNME ---> PROJECTNAME --->PROJECTNAME ---> urls.py
+  FOLDERNME ---> PROJECTNAME --->PROJECTNAME ---> urls.py
 
-           from django.urls import path, include
-		   urlpatterns = [
-		    path("admin/",……………………...),
-		   ………………………………………………..,
-		  path("project_lvl_url/", include("APPNAME.urls"))
-		]
+        from django.urls import path, include
+		urlpatterns = [
+		path("admin/",……………………...),
+		………………………………………………..,
+		path("project_lvl_url/", include("APPNAME.urls"))
+		  ]
 
 
 ### 12. Create a URLPattern
 
-FOLDERNME ---> PROJECTNAME---> APPNAME ---> urls.py
+  FOLDERNME ---> PROJECTNAME---> APPNAME ---> urls.py
 
 			from django.urls import path
 			urlpatterns = [
