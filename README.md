@@ -228,19 +228,19 @@ FOLDERNAME --> PROJECTNAME --> AppNAME -->admin.py
 
 ### Update
 
- 31. 	obj MODELNAME.objects.get(col = val) 
-      obj.member = NEWVAL 
-      obj.save()
+31. 	obj MODELNAME.objects.get(col = val) 
+		obj.member = NEWVAL 
+		obj.save()
 
 ### Delete
 
 32. 	obj = MODELNAME.objects.get(col = val) 
-     obj.delete()
+     	obj.delete()
 
 ### Insert
 
 33. 	obj MODELNAME(col1=vall, col2=val2,...) 
-     obj.save()
+     	obj.save()
 
 ### Retrieval
 
@@ -254,9 +254,9 @@ FOLDERNAME --> PROJECTNAME --> AppNAME -->admin.py
 
 38. 	objs_qs = MODELNAME.objects.filter(col_gte = val)
 
-39.	 objs_qs = MODELNAME.objects.filter(col_startswith = "L")
+39.		 objs_qs = MODELNAME.objects.filter(col_startswith = "L")
 
-40.	 objs_qs = MODELNAME.objects.filter(col_endswith = "L")
+40.	 	objs_qs = MODELNAME.objects.filter(col_endswith = "L")
 
 41. 	objs_qs = MODELNAME.objects.filter(col_contains = "L")
 
