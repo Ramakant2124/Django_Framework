@@ -1,0 +1,21 @@
+{% extends 'FIRSTAPP/base.html' %}
+
+  {% block title %}
+<title xmlns="http://www.w3.org/1999/html">Login Page</title>
+    {% endblock %}
+
+{% block content %}
+<h2> Login Page</h2>
+<form method="post">
+      {% for msg in messages %}
+    <p class="alert alert-{{ msg.tags}}" >{{ msg }} </p>
+    {% endfor %}
+    {% csrf_token %}
+    <label>Enetr Username</label><br><br>
+    <input type="text" name="username" placeholder=" Enetr username"><br><br>
+    <label>Enetr Password</label><br><br>
+    <input type="password" name="password" placeholder=" Enetr password"><br><br>
+
+    <input type="submit" value="Loign"></input>
+</form>
+ {% endblock %}

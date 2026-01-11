@@ -1,0 +1,14 @@
+{% extends 'FIRSTAPP/base.html' %}
+
+  {% block title %}
+<title xmlns="http://www.w3.org/1999/html">Register Page</title>
+    {% endblock %}
+
+{% block content %}
+<h2> Register Page</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">Register</input>
+</form>
+ {% endblock %}
