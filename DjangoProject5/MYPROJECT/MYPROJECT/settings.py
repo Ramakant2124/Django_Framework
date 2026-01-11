@@ -126,3 +126,21 @@ STATIC_URL = '/static/'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#hcgj vuzf Ifub pmvr
+#uqxt xaxd mbnz fxec
+
+import os
+
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'chaudhari2124@gmail.com' # Your full Gmail address
+EMAIL_HOST_PASSWORD = 'uqxt xaxd mbnz fxec' # The 16-char app password
+#DEFAULT_FROM_EMAIL = 'chaudhari2124@gmail.com' # The default sender address
+
+import certifi
+os.environ['SSL_CERT_FILE'] = certifi.where()

@@ -1,8 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from .forms import LaptopModelForm
 from .models import LaptopModel
-
+from django.core.mail import send_mail
 
 # Create your views here.
 def home_page_view(request):
@@ -26,3 +27,15 @@ def add_laptops_view(request):
     template_name = 'FIRSTAPP/add_laptops.html'
     context = {"form":form}
     return render(request, template_name, context)
+
+def test_send_email_view(request):
+    print("Sending email Started......")
+    send_mail(
+        "subject:Test Subject",
+        "message:Text Msg body",
+        "chaudhari2124@gmail.ccom",
+        ["ramakantchaudhari9834@gmail.com"],
+        fail_silently=False,
+        )
+    print("Mail send......")
+    return HttpResponse("Mail sent.")
