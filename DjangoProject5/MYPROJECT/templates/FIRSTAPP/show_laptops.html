@@ -1,0 +1,27 @@
+{% extends 'FIRSTAPP/base.html' %}
+
+  {% block title %}
+<title >Show Laptops Page</title>
+    {% endblock %}
+
+{% block content %}
+<h2> Show Laptops Page</h2>
+<table class="table table-hover" >
+    <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Brand</th>
+        <th>Model</th>
+    <th>price</th>
+    </tr>
+    {% for laptop in laptop_objs_qs %}
+    <tr>
+        <td>{{ laptop.id}}</td>
+        <td><img src="{{ laptop.image.url}}" height="100px" width="100px"></td>
+        <td>{{ laptop.brand}}</td>
+        <td>{{ laptop.model}}</td>
+        <td>{{ laptop.price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+ {% endblock %}

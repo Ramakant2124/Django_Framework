@@ -1,0 +1,17 @@
+{% extends 'FIRSTAPP/base.html' %}
+
+  {% block title %}
+<title >Add Laptops Page</title>
+    {% endblock %}
+
+{% block content %}
+<h2> Add Laptops Page</h2>
+<form method="post" enctype="multipart/form-data">
+      {% for msg in messages %}
+    <p class="alert alert-{{ msg.tags}}" >{{ msg }} </p>
+    {% endfor %}
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add Laptop"></input>
+</form>
+ {% endblock %}
