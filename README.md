@@ -451,6 +451,148 @@ PROJECTNAME------> templates ------> APPNAME------> templ.html
 
 		{{ form|crispy }}
 
+## Django Messages Framework
+
+### 1. Add a message
+
+PROJECTNAME ---> APPNAME--->views.py
+
+		from django.contrib import messages
+
+		def VIEWNAME(request):
+		-----------------
+		------------------
+		messages.error(request, "ERROR MSG TO SHOW", extra_tags="danger")
+### OR
+
+		messages.success(request, "SUCCESS MSG TO SHOW", extra_tags="success")
+### OR
+
+		messages.warning (request, "WARNING MSG TO SHOW", extra_tags="warning")
+### OR
+
+		messages.info(request, "WARNING MSG TO SHOW", extra_tags="primary")
+
+### 2. Render a message
+
+PROJECTNAME---> templates ---> APPNAME---> templ.html
+
+		{% if messages %}
+		
+		{% for msg in messages %}
+		<p class="alert alert-{{msg.tags)}"> {{ msg }} </p>
+		{% endfor %)
+		{% endif %)
+
+
+### Media Files in Django
+
+### 0. Install necessary library
+
+		pip install pillow
+
+### 1. Create a directory
+
+		PROJECTNAME---> media
+
+### 2. Configuration in settings.py
+
+PROJECTNAME---> PROJECTNAME--->settings.py
+
+		MEDIA_URL=/media/"
+		
+		MEDIA_ROOT= os.path.join(BASE DIR, 'media")
+
+### 3. Modify Project Level urls.py
+
+ PROJECTNAME--->PROJECTNAME--->urls.py
+
+		Urlpatterns =    [
+		------------------
+		------------------
+		------------------
+		------------------
+		]
+		
+		Urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+### 4. Use Inagefield in Model 
+
+PROJECTNAME--->APPNAME--->models.py
+
+		class MODELNAME(models.Model):
+				field1 = models.FIELDNAME1()
+				field2 = models.FIELDNAME2()
+				.
+				.
+		Fieldn =  Imagefield(upload_tox"media")
+		
+### 5. Create a form to collect media files
+
+PROJECTNAME---> templates--->APPNAME--->templ.html
+
+		<form method=POST enctype=”multipart/form-data">
+
+### 6. Collect & store media files on Django 
+PROJECTNAME --->APPNAME --->view.py
+
+		 def  VIEWNME(request):
+		  		form = MODELFORM()
+				if request.method ==”post”:
+						form=MODELFFROM(request.POST,request.FILES)
+						if form.is_valid():
+							form.save():
+							return redirect
+						context ={form:”form”}
+		return render(request.template_name, context)
+		
+### 7. Displaying Files in Templates
+PROJECTNAME---> templates--->APPNAME--->templ.html
+
+		<tag src=”{{obj.field}}”>
+
+## Sending Mails in Django
+
+### 1)	Configure Your Google Account (App Password)
+
+		- to your Google Account Security page. 
+		-Enable 2-Step Verification if it's not already on.
+		-Once 2-Step Verification is active, go to the App Passwords section
+		-Select Mail as the app and Other (Custon name) as the device ( e.g., "Django App").
+		-Click Generate. Google will provide a 16-character password. Copy this password inmediately, as it is shown only once.
+### 2)  install lab
+
+		pip install --upgrade certifi
+
+### 3) Configure Your Django settings.py
+
+		import os   #Ensure you have this at the top of your file other settings.
+		#........Other setting
+		EMAIL_BACKEND =’django.core.mail.backends.smtp.EmailBackend’
+		EMAIL_HOST =’setp.gmail.com’
+		EMAIL_PORT= 587 # Use 587 for TLS
+		EMAIL_USE_TLS  = True
+		EMAIL_HOST_USER = ‘ your email@gmail.com’ # Your full Gmail address
+		EMAIL_HOST_PASSWORD =’ your 16_character_app_password’ #The generated App Password
+		
+		import certifi, os
+		os.environ ('SSL CERT FILE") certifi.where()
+
+### 4) Send an Email
+
+		from django.core.mail import send_mail
+		def send_welcome_email(request):
+		send maili(
+		subject,
+		message,
+		 from email,
+		 fail silently=false,  # Set to False to raise exceptions on error
+		)
+
+
+
+
+
 
 <img width="940" height="534" alt="image" src="https://github.com/user-attachments/assets/6488d494-08bc-4760-8ff9-663eff6aec56" />
 
